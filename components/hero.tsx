@@ -17,6 +17,9 @@ export function Hero() {
     { id: 2, title: "DevOps", date: "2025", content: "Automatisation, CI/CD, observabilité", category: "devops", icon: "settings", relatedIds: [1, 4], status: "in-progress", energy: 70 },
     { id: 3, title: "CI/CD", date: "2025", content: "Intégration continue & déploiement", category: "pipeline", icon: "gitBranch", relatedIds: [2], status: "completed", energy: 65 },
     { id: 4, title: "Delivery", date: "2025", content: "Release fiable & monitoring", category: "delivery", icon: "rocket", relatedIds: [2, 3], status: "completed", energy: 75 },
+    { id: 5, title: "Monitoring", date: "2025", content: "Surveillance & alertes", category: "monitoring", icon: "chartBar", relatedIds: [4], status: "completed", energy: 80 },
+    { id: 6, title: "Security", date: "2025", content: "Sécurité des données & applications", category: "security", icon: "lock", relatedIds: [4], status: "completed", energy: 85 },
+    { id: 7, title: "Scalability", date: "2025", content: "Scalabilité horizontale & verticale", category: "scalability", icon: "scale", relatedIds: [4], status: "completed", energy: 80 },
   ]
 
   return (
