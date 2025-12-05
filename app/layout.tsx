@@ -43,8 +43,7 @@ export default function RootLayout({
         <Script id="dynamic-favicon" strategy="beforeInteractive">
           {`
             function updateFavicon() {
-              const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const faviconHref = darkMode ? '/icons/skitbit-white.svg' : '/icons/favicon-dark.svg';
+              const faviconHref = '/profil-bild.jpg';
               let link = document.querySelector("link[rel~='icon']");
               if (!link) {
                 link = document.createElement('link');
@@ -54,7 +53,6 @@ export default function RootLayout({
               link.href = faviconHref;
             }
             updateFavicon();
-            // Listen for changes in theme
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
           `}
         </Script>
