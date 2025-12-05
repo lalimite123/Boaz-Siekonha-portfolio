@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import DatabaseWithRestApi from "@/components/ui/database-with-rest-api"
+import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline"
 
 export function Hero() {
   const buttonNew = (
@@ -10,6 +11,13 @@ export function Hero() {
       </a>
     </Button>
   )
+
+  const timelineDataDevopsScrum = [
+    { id: 1, title: "Scrum", date: "2025", content: "Sprints, backlog, revues & rétros", category: "scrum", icon: "listChecks", relatedIds: [2, 3], status: "completed", energy: 80 },
+    { id: 2, title: "DevOps", date: "2025", content: "Automatisation, CI/CD, observabilité", category: "devops", icon: "settings", relatedIds: [1, 4], status: "in-progress", energy: 70 },
+    { id: 3, title: "CI/CD", date: "2025", content: "Intégration continue & déploiement", category: "pipeline", icon: "gitBranch", relatedIds: [2], status: "completed", energy: 65 },
+    { id: 4, title: "Delivery", date: "2025", content: "Release fiable & monitoring", category: "delivery", icon: "rocket", relatedIds: [2, 3], status: "completed", energy: 75 },
+  ]
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -55,6 +63,23 @@ export function Hero() {
               <li>Validation des schémas et gestion des erreurs</li>
               <li>Statuts HTTP cohérents et messages clairs</li>
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-white">Approche DevOps & Scrum</h2>
+            <p className="text-sm text-neutral-300">
+              Cadre agile et chaîne de livraison continue: sprints, backlog priorisé, pipelines automatisés et qualité mesurable.
+            </p>
+            <ul className="text-sm text-neutral-300 space-y-2">
+              <li>Scrum: sprints, revues, rétrospectives, backlog</li>
+              <li>DevOps: CI/CD, monitoring, sécurité et conformité</li>
+              <li>Delivery: releases fiables, feedback & amélioration continue</li>
+            </ul>
+          </div>
+          <div>
+            <RadialOrbitalTimeline timelineData={timelineDataDevopsScrum} className="h-[460px] rounded-xl" backgroundClass="bg-transparent" />
           </div>
         </div>
       </div>
