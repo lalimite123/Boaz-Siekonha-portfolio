@@ -41,10 +41,12 @@ export default function RadialOrbitalTimeline({
     x: 0,
     y: 0,
   });
+  const [orbitRadius, setOrbitRadius] = useState<number>(180);
   const [activeNodeId, setActiveNodeId] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const [ringScale, setRingScale] = useState<number>(1);
 
   const iconMap: Record<string, React.ElementType> = {
     listChecks: ListChecks,
@@ -118,6 +120,19 @@ export default function RadialOrbitalTimeline({
     };
   }, [autoRotate, viewMode]);
 
+  useEffect(() => {
+    const computeRadius = () => {
+      const w = containerRef.current?.getBoundingClientRect().width || 0;
+      const r = Math.max(120, Math.min(180, w * 0.22));
+      setOrbitRadius(Math.round(r));
+      const scale = w < 640 ? 0.7 : w < 768 ? 0.85 : 1;
+      setRingScale(scale);
+    };
+    computeRadius();
+    window.addEventListener("resize", computeRadius);
+    return () => window.removeEventListener("resize", computeRadius);
+  }, []);
+
   const centerViewOnNode = (nodeId: number) => {
     if (viewMode !== "orbital" || !nodeRefs.current[nodeId]) return;
 
@@ -130,7 +145,7 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 200;
+    const radius = orbitRadius;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -185,13 +200,20 @@ export default function RadialOrbitalTimeline({
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500 animate-pulse flex items-center justify-center z-10">
-            <div className="absolute w-20 h-20 rounded-full border border-white/20 animate-ping opacity-70"></div>
+          <div className="absolute w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500 animate-pulse flex items-center justify-center z-10">
             <div
-              className="absolute w-24 h-24 rounded-full border border-white/10 animate-ping opacity-50"
-              style={{ animationDelay: "0.5s" }}
+              className="absolute rounded-full border-2 border-white/30 animate-ping opacity-90"
+              style={{ width: "28rem", height: "28rem", animationDuration: "2.5s", transform: `scale(${ringScale})` }}
             ></div>
-            <div className="w-8 h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
+            <div
+              className="absolute rounded-full border-2 border-white/20 animate-ping opacity-70"
+              style={{ width: "22rem", height: "22rem", animationDelay: "0.6s", animationDuration: "3s", transform: `scale(${ringScale})` }}
+            ></div>
+            <div
+              className="absolute rounded-full border-2 border-white/10 animate-ping opacity-50"
+              style={{ width: "16rem", height: "16rem", animationDelay: "1.2s", animationDuration: "3.5s", transform: `scale(${ringScale})` }}
+            ></div>
+            <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md"></div>
           </div>
 
           <div className="absolute w-96 h-96 rounded-full border border-white/10"></div>

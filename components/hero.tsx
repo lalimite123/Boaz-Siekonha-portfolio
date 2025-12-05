@@ -2,15 +2,52 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import DatabaseWithRestApi from "@/components/ui/database-with-rest-api"
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline"
+import RotatingText from "@/components/ui/rotating-text"
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogCancel,
+} from "@/components/ui/alert-dialog"
 
 export function Hero() {
   const buttonNew = (
     <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-      <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">
         Me contacter
       </a>
     </Button>
   )
+
+  const rotatingTexts = [
+    "Intelligence Artificielle",
+    "Cloud Computing",
+    "Cybersécurité",
+    "DevOps",
+    "Data Science",
+    "Big Data",
+    "Machine Learning",
+    "Artificial Neural Networks",
+    "Natural Language Processing (NLP)",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Redis",
+    "Kafka",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "AWS",
+    "GCP",
+    "Azure",
+  ]
 
   const timelineDataDevopsScrum = [
     { id: 1, title: "Scrum", date: "2025", content: "Sprints, backlog, revues & rétros", category: "scrum", icon: "listChecks", relatedIds: [2, 3], status: "completed", energy: 80 },
@@ -31,16 +68,63 @@ export function Hero() {
               <Image src="/icons/skitbit-white.svg" alt="Logo" width={32} height={32} className="h-8 w-8" />
               <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">boaz siekonha</p>
             </div>
-            <h1 className="mt-3 text-left text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-              <span className="block">Portfolio Personnel</span>
-              <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">Design & Développement</span>
-              <span className="block">Projets sélectionnés</span>
+            <h1 className="mt-3 text-left text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
+              <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)] sm:text-6xl md:text-6xl">Fullstack software engineer</span>
+              <span className="block text-white/90 text-3xl sm:text-4xl md:text-5xl">Du Design à la Production</span>
+              <span className="block text-neutral-300 text-xl sm:text-2xl md:text-3xl">Solide expertise Front-End • APIs • Cloud</span>
             </h1>
+          <div className="mt-4">
+            <RotatingText
+              texts={rotatingTexts}
+              rotationInterval={2200}
+              mainClassName="inline-flex items-center text-left text-2xl sm:text-3xl font-extrabold tracking-tight bg-lime-600/80 text-white drop-shadow-[0_0_20px_rgba(132,204,22,0.35)] rounded-lg px-3 py-1.5"
+              splitLevelClassName="mr-1"
+            />
+          </div>
             <div className="mt-6">{buttonNew}</div>
           </div>
-          <div className="w-full flex justify-center lg:justify-end">
-            <div className="relative h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64 overflow-hidden rounded-full border border-white/10 bg-black">
-              <Image src="/profil-bild.jpg" alt="Photo de profil — Boaz Siekonha" fill className="object-cover" sizes="(min-width: 1024px) 256px, (min-width: 768px) 224px, 192px" />
+          <div className="w-full flex justify-start sm:justify-center lg:justify-end pl-2 sm:pl-0">
+            <div className="flex flex-col items-center gap-2 sm:gap-3">
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <div className="relative h-48 w-48 sm:h-56 sm:w-56 lg:h-64 lg:w-64 overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-md cursor-pointer">
+                    <Image src="/profil-bild.jpg" alt="Photo de profil — Boaz Siekonha" fill className="object-cover object-[48%_50%]" sizes="(min-width: 1024px) 256px, (min-width: 768px) 224px, 192px" />
+                  </div>
+                </AlertDialogTrigger>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  
+                  <AlertDialogTrigger asChild>
+                    <Button className="rounded-full bg-lime-400 px-4 py-1 sm:px-5 sm:py-1.5 text-black hover:bg-lime-300 text-sm">
+                      <span className="text-sm sm:text-base font-semibold tracking-wide text-white/90">
+                        Even the sky is not the limit
+                      </span>
+                    </Button>
+                  </AlertDialogTrigger>
+                </div>
+                <AlertDialogContent className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="text-white">Boaz Siekonha</AlertDialogTitle>
+                    <AlertDialogDescription className="text-neutral-300">
+                      Software Engineer Fullstack — du design à la production. Passionné par l’IA, le Cloud et la sécurité, avec un focus sur la qualité, la performance et l’expérience utilisateur.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 items-center">
+                    <div className="relative h-28 w-28 overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-md cursor-zoom-in transition-transform duration-300 hover:scale-[1.06] active:scale-[1.12]">
+                      <Image src="/profil-bild.jpg" alt="Profil — Boaz Siekonha" fill className="object-cover" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-sm text-neutral-300">Je conçois et livre des applications robustes et élégantes: Front-End moderne, APIs fiables, pipelines DevOps et déploiements cloud.</p>
+                      <div className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-600/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Profil mis en avant</div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex justify-end gap-2">
+                    <Button asChild className="rounded-full bg-lime-400 px-5 py-1.5 text-black hover:bg-lime-300 text-sm">
+                      <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">Me contacter</a>
+                    </Button>
+                    <AlertDialogCancel className="rounded-full">Fermer</AlertDialogCancel>
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </div>
         </div>
@@ -55,30 +139,34 @@ export function Hero() {
               lightColor="#0d8af0ff"
             />
           </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Backend (REST API)</h2>
-            <p className="text-sm text-neutral-300">
+          <div className="space-y-4 group">
+            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-blue-300/90">REST API</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-white text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.35)] group-hover:scale-[1.02]">Backend (REST API)</h2>
+            <div className="mt-1 h-px w-28 bg-gradient-to-r from-blue-400/60 to-transparent" />
+            <p className="text-lg leading-8 text-neutral-200 font-medium">
               Endpoints sécurisés et structurés pour la gestion des données: conception orientée ressources,
               validations, contrôle des accès et réponses normalisées.
             </p>
-            <ul className="text-sm text-neutral-300 space-y-2">
-              <li>GET, POST, PUT, DELETE sur les ressources principales</li>
-              <li>Validation des schémas et gestion des erreurs</li>
-              <li>Statuts HTTP cohérents et messages clairs</li>
+            <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>GET, POST, PUT, DELETE sur les ressources principales</li>
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Validation des schémas et gestion des erreurs</li>
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Statuts HTTP cohérents et messages clairs</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white">Approche DevOps & Scrum</h2>
-            <p className="text-sm text-neutral-300">
+          <div className="space-y-4 group">
+            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-purple-300/90">Agile & Delivery</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-teal-300 text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.35)] group-hover:scale-[1.02]">Approche DevOps & Scrum</h2>
+            <div className="mt-1 h-px w-28 bg-gradient-to-r from-purple-400/60 to-transparent" />
+            <p className="text-lg leading-8 text-neutral-200 font-medium">
               Cadre agile et chaîne de livraison continue: sprints, backlog priorisé, pipelines automatisés et qualité mesurable.
             </p>
-            <ul className="text-sm text-neutral-300 space-y-2">
-              <li>Scrum: sprints, revues, rétrospectives, backlog</li>
-              <li>DevOps: CI/CD, monitoring, sécurité et conformité</li>
-              <li>Delivery: releases fiables, feedback & amélioration continue</li>
+            <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Scrum: sprints, revues, rétrospectives, backlog</li>
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>DevOps: CI/CD, monitoring, sécurité et conformité</li>
+              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Delivery: releases fiables, feedback & amélioration continue</li>
             </ul>
           </div>
           <div>
