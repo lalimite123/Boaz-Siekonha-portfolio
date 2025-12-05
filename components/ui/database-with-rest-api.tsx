@@ -104,7 +104,7 @@ const DatabaseWithRestApi = ({
           {/* First Button */}
           <g>
             <rect
-              fill="#18181B"
+              fill="#0c7911ff"
               x="14"
               y="5"
               width="34"
@@ -126,7 +126,7 @@ const DatabaseWithRestApi = ({
           {/* Second Button */}
           <g>
             <rect
-              fill="#18181B"
+              fill="#516174ff"
               x="60"
               y="5"
               width="34"
@@ -148,7 +148,7 @@ const DatabaseWithRestApi = ({
           {/* Third Button */}
           <g>
             <rect
-              fill="#18181B"
+              fill="#0e0ee4ff"
               x="108"
               y="5"
               width="34"
@@ -170,7 +170,7 @@ const DatabaseWithRestApi = ({
           {/* Fourth Button */}
           <g>
             <rect
-              fill="#18181B"
+              fill="#a70b0bff"
               x="150"
               y="5"
               width="40"
