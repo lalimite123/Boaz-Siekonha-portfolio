@@ -52,7 +52,7 @@ export function Hero() {
               circleText="API"
               badgeTexts={{ first: "GET", second: "POST", third: "PUT", fourth: "DELETE" }}
               buttonTexts={{ first: "Back-end", second: "Endpoints" }}
-              lightColor="#0c24afff"
+              lightColor="#0d8af0ff"
             />
           </div>
           <div className="space-y-4">

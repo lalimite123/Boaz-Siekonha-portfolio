@@ -253,7 +253,7 @@ const DatabaseWithRestApi = ({
           {circleText ? circleText : "SVG"}
         </div>
         {/* box content */}
-        <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
+        <div className="relative z-10 group flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border border-white/20 bg-white/10 backdrop-blur-md shadow-md">
           {/* Badges */}
           <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
             <HeartHandshakeIcon className="size-4" />
@@ -264,11 +264,51 @@ const DatabaseWithRestApi = ({
             <span>{buttonTexts?.second || "v2_updates"}</span>
           </div>
           {/* Circles */}
-          <div className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t bg-accent/5" />
-          <div className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t bg-accent/5" />
-          <div className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t bg-accent/5" />
-          <div className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t bg-accent/5" />
+          <div
+            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t-2 border-blue-400/70 bg-blue-500/5 transition-transform duration-500 group-hover:scale-[1.04] group-hover:bg-blue-500/10 group-hover:border-blue-300 group-hover:shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+            style={{
+              animationName: "spin, shortWave",
+              animationDuration: "14s, 1.6s",
+              animationTimingFunction: "linear, ease-in-out",
+              animationIterationCount: "infinite, infinite",
+            }}
+          />
+          <div
+            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t-2 border-blue-400/70 bg-blue-500/5 transition-transform duration-500 group-hover:scale-[1.04] group-hover:bg-blue-500/10 group-hover:border-blue-300 group-hover:shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+            style={{
+              animationName: "spin, shortWave",
+              animationDuration: "20s, 1.8s",
+              animationTimingFunction: "linear, ease-in-out",
+              animationIterationCount: "infinite, infinite",
+              animationDirection: "reverse, normal",
+            }}
+          />
+          <div
+            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t-2 border-blue-400/70 bg-blue-500/5 transition-transform duration-500 group-hover:scale-[1.04] group-hover:bg-blue-500/10 group-hover:border-blue-300 group-hover:shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+            style={{
+              animationName: "spin, shortWave",
+              animationDuration: "26s, 2s",
+              animationTimingFunction: "linear, ease-in-out",
+              animationIterationCount: "infinite, infinite",
+            }}
+          />
+          <div
+            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t-2 border-blue-400/70 bg-blue-500/5 transition-transform duration-500 group-hover:scale-[1.04] group-hover:bg-blue-500/10 group-hover:border-blue-300 group-hover:shadow-[0_0_18px_rgba(59,130,246,0.35)]"
+            style={{
+              animationName: "spin, shortWave",
+              animationDuration: "32s, 2.2s",
+              animationTimingFunction: "linear, ease-in-out",
+              animationIterationCount: "infinite, infinite",
+              animationDirection: "reverse, normal",
+            }}
+          />
         </div>
+        <style jsx global>{`
+          @keyframes shortWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+          }
+        `}</style>
       </div>
     </div>
   );
