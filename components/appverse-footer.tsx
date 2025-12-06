@@ -58,14 +58,33 @@ export function AppverseFooter() {
           <div className="relative grid items-center gap-8 md:grid-cols-2">
             {/* Left copy */}
             <div>
-              <p className="mb-2 text-[11px] tracking-widest text-lime-300">STREAMLINE YOUR LAUNCHES</p>
-              <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Preview &amp; approve high-end 3D visuals from anywhere
-              </h3>
-              <p className="mt-2 max-w-prose text-sm text-neutral-400">
-                Review renders, leave timestamped comments, and approve scenes from anywhere. Using our revision &amp;
-                collaboration tools
+              <p className="mb-2 text-sm sm:text-base md:text-lg uppercase tracking-[0.25em] text-lime-300 drop-shadow-[0_0_16px_rgba(132,204,22,0.25)]">PROJEKT — E‑COMMERCE PLATFORM (PWA)</p>
+              <p className="mt-3 max-w-prose text-base sm:text-lg text-neutral-300">
+                Progressive Web App mit Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui und vollständiger RESTful API.
               </p>
+              <p className="mt-2 max-w-prose text-sm sm:text-base text-neutral-300">
+                Authentifizierung &amp; Sicherheit mit NextAuth.js, JWT, bcrypt/Argon2, Middleware und rollenbasiertem Zugriff. Skalierbare Architektur, optimiert für Performance (Lazy Loading, Code Splitting, Caching, CDN).
+              </p>
+              <div className="mt-4 max-w-prose rounded-lg border border-lime-400/30 bg-lime-500/10 backdrop-blur-md shadow-md p-4 sm:p-5">
+                <ul className="space-y-2 text-sm sm:text-base text-neutral-100/90">
+                  <li>REST API: Produkte, Kategorien, Bestellungen, Authentifizierung, Mailer</li>
+                  <li>Sicherheit: NextAuth.js, JWT, bcrypt/Argon2, Admin‑Middleware, RBAC</li>
+                  <li>Katalog &amp; Checkout: Suche, Filter, Bestand, Warenkorb, Zahlungen, E‑Mail‑Bestätigungen</li>
+                  <li>Admin‑Dashboard: CRUD, Bestellverfolgung, Rollen (Admin/User)</li>
+                  <li>Datenbank: MongoDB/Mongoose, typisierte Schemas, Services, Init‑Skripte</li>
+                  <li>Performance: Lazy Loading, Code Splitting, Caching, CDN</li>
+                  <li>Tools: TypeScript, React, Next.js 13+, Node.js, Tailwind CSS, shadcn/ui, Framer Motion</li>
+                </ul>
+                <div className="mt-4">
+                  <Link
+                    href="https://wabo-realese-vdf9.vercel.app/"
+                    target="_blank"
+                    className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                  >
+                    Projekt entdecken
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Right mockup */}

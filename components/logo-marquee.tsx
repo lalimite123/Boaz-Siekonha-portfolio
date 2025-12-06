@@ -6,28 +6,48 @@ import Image from "next/image"
 
 export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
-
-  const logos = [
-    { name: "VICTORINOX", image: "/icons/Victorinox.png" },
-    { name: "", image: "/icons/Trumpp.png" },
-    { name: "Skitbit", image: "/icons/Poedagarr.png" },
-    { name: "VK", image: "/icons/Supp.png" },
-    { name: "TechCrunch", image: "/icons/SHKUP.png" },
-    { name: "MailChimp", image: "/icons/Persona.png" },
-    { name: "ESJ", image: "/icons/HFFB.png" },
-    { name: "Kickstarter", image: "/icons/Palladio.png" },
+  const logoFiles = [
+    "Google_Colaboratory.svg",
+    "auth0.svg",
+    "better-auth_wordmark_light.svg",
+    "csharp.svg",
+    "dotnet.svg",
+    "effect_light.svg",
+    "firebase-wordmark.svg",
+    "java.svg",
+    "javascript.svg",
+    "json.svg",
+    "microsoft-onedrive.svg",
+    "netlify.svg",
+    "nextjs_icon_dark.svg",
+    "nodejs.svg",
+    "nuxthub-wordmark-light.svg",
+    "nvidia-icon-light.svg",
+    "python.svg",
+    "react_wordmark_light.svg",
+    "shadcn-ui.svg",
+    "svelte.svg",
+    "terraform.svg",
+    "threejs-light.svg",
+    "typescript.svg",
+    "vercel_wordmark.svg",
+    "vitejs.svg",
   ]
 
-  const secondRowLogos = [
-    { name: "StumbleUpon", image: "/icons/Kami.png" },
-    { name: "Microsoft", image: "/icons/NEEMANS.png" },
-    { name: "CleanMyMac", image: "/icons/FLICK.png" },
-    { name: "Google", image: "/icons/Vandelay.png" },
-    { name: "Behance", image: "/icons/KEJBYKEJ.png" },
-    { name: "Apple", image: "/icons/Skinny.png" },
-    { name: "TransferWise", image: "/icons/RICO.png" },
-    { name: "Medium", image: "/icons/Skyborne.png" },
-  ]
+  const humanize = (file: string) =>
+    file
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, (m) => m.toUpperCase())
+
+  const allLogos = logoFiles.map((file) => ({
+    name: humanize(file),
+    image: `/logo/${file}`,
+  }))
+
+  const half = Math.ceil(allLogos.length / 2)
+  const logos = allLogos.slice(0, half)
+  const secondRowLogos = allLogos.slice(half)
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
     <div
@@ -35,13 +55,13 @@ export function LogoMarquee() {
       onMouseEnter={() => setPausedRow(rowId)}
       onMouseLeave={() => setPausedRow(null)}
     >
-      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 border border-white/20 backdrop-blur-xl flex items-center justify-center overflow-hidden">
+      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-2xl bg-black/40 border border-white/20 backdrop-blur-xl flex items-center justify-center overflow-hidden transition-all duration-200 hover:border-lime-400/40 hover:shadow-[0_0_16px_rgba(132,204,22,0.25)]">
         <div className="relative w-full h-full">
           <Image
             src={logo.image || "/placeholder.svg"}
             alt={logo.name}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="(min-width: 1024px) 128px, (min-width: 640px) 112px, 96px"
           />
         </div>

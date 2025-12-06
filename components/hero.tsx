@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import DatabaseWithRestApi from "@/components/ui/database-with-rest-api"
@@ -12,6 +13,7 @@ import {
   AlertDialogDescription,
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog"
+import { motion } from "framer-motion"
 
 export function Hero() {
   const buttonNew = (
@@ -139,36 +141,54 @@ export function Hero() {
               lightColor="#0d8af0ff"
             />
           </div>
-          <div className="space-y-4 group">
-            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-blue-300/90">REST API</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-white text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.35)] group-hover:scale-[1.02]">Backend (REST API)</h2>
-            <div className="mt-1 h-px w-28 bg-gradient-to-r from-blue-400/60 to-transparent" />
-            <p className="text-lg leading-8 text-neutral-200 font-medium">
-              Endpoints sécurisés et structurés pour la gestion des données: conception orientée ressources,
-              validations, contrôle des accès et réponses normalisées.
-            </p>
-            <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>GET, POST, PUT, DELETE sur les ressources principales</li>
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Validation des schémas et gestion des erreurs</li>
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Statuts HTTP cohérents et messages clairs</li>
-            </ul>
-          </div>
+          <motion.div
+            className="relative z-10 overflow-hidden rounded-lg border border-white/20 bg-white/10 backdrop-blur-md shadow-md p-4 sm:p-6 transition-shadow duration-200 hover:shadow-[0_0_18px_rgba(255,255,255,0.10)] hover:ring-1 hover:ring-white/10 hover:border-white/30 hover:bg-white/12"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -2 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ type: "spring", damping: 22, stiffness: 220, mass: 0.6 }}
+          >
+            <div className="space-y-4 group">
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-blue-300/90">REST API</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-white text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.35)] group-hover:scale-[1.02]">Backend (REST API)</h2>
+              <div className="mt-1 h-px w-28 bg-gradient-to-r from-blue-400/60 to-transparent" />
+              <p className="text-lg leading-8 text-neutral-200 font-medium">
+                Endpoints sécurisés et structurés pour la gestion des données: conception orientée ressources,
+                validations, contrôle des accès et réponses normalisées.
+              </p>
+              <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>GET, POST, PUT, DELETE sur les ressources principales</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Validation des schémas et gestion des erreurs</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Statuts HTTP cohérents et messages clairs</li>
+              </ul>
+            </div>
+          </motion.div>
         </div>
 
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
-          <div className="space-y-4 group">
-            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-purple-300/90">Agile & Delivery</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-teal-300 text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.35)] group-hover:scale-[1.02]">Approche DevOps & Scrum</h2>
-            <div className="mt-1 h-px w-28 bg-gradient-to-r from-purple-400/60 to-transparent" />
-            <p className="text-lg leading-8 text-neutral-200 font-medium">
-              Cadre agile et chaîne de livraison continue: sprints, backlog priorisé, pipelines automatisés et qualité mesurable.
-            </p>
-            <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Scrum: sprints, revues, rétrospectives, backlog</li>
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>DevOps: CI/CD, monitoring, sécurité et conformité</li>
-              <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Delivery: releases fiables, feedback & amélioration continue</li>
-            </ul>
-          </div>
+          <motion.div
+            className="relative z-10 overflow-hidden rounded-lg border border-white/20 bg-white/10 backdrop-blur-md shadow-md p-4 sm:p-6 transition-shadow duration-200 hover:shadow-[0_0_18px_rgba(255,255,255,0.10)] hover:ring-1 hover:ring-white/10 hover:border-white/30 hover:bg-white/12"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -2 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ type: "spring", damping: 22, stiffness: 220, mass: 0.6, delay: 0.06 }}
+          >
+            <div className="space-y-4 group">
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-purple-300/90">Agile & Delivery</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-teal-300 text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.35)] group-hover:scale-[1.02]">Approche DevOps & Scrum</h2>
+              <div className="mt-1 h-px w-28 bg-gradient-to-r from-purple-400/60 to-transparent" />
+              <p className="text-lg leading-8 text-neutral-200 font-medium">
+                Cadre agile et chaîne de livraison continue: sprints, backlog priorisé, pipelines automatisés et qualité mesurable.
+              </p>
+              <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Scrum: sprints, revues, rétrospectives, backlog</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>DevOps: CI/CD, monitoring, sécurité et conformité</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Delivery: releases fiables, feedback & amélioration continue</li>
+              </ul>
+            </div>
+          </motion.div>
           <div>
             <RadialOrbitalTimeline timelineData={timelineDataDevopsScrum} className="h-[460px] rounded-xl" backgroundClass="bg-transparent" />
           </div>
