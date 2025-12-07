@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Instagram, Twitter, Youtube, MessageCircle } from "lucide-react"
+import { Mail, MessageCircle } from "lucide-react"
 import LazyVideo from "./lazy-video"
 import Image from "next/image"
 
@@ -14,8 +14,9 @@ interface FooterContent {
 }
 
 const defaultContent: FooterContent = {
-  tagline: "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
-  copyright: "© 2025 — Skitbit International Uk",
+  tagline:
+    "Boaz Siekonha, Full-Stack-Entwickler mit Expertise in React, Next.js, Node.js und TypeScript. Ich baue skalierbare Web-Apps mit moderner Architektur, sicheren APIs und intuitiven Interfaces – von der Idee bis zum Deployment.",
+  copyright: "© 2025 — Boaz Siekonha",
 }
 
 export function AppverseFooter() {
@@ -46,7 +47,7 @@ export function AppverseFooter() {
             className="rounded-full bg-lime-400 px-6 py-2 text-sm font-medium text-black shadow-[0_0_20px_rgba(163,230,53,0.35)] hover:bg-lime-300"
           >
             <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">
-              Contact us
+              Chat mit mir auf WhatsApp
             </a>
           </Button>
         </div>
@@ -99,16 +100,16 @@ export function AppverseFooter() {
                     loop={true}
                     muted={true}
                     playsInline={true}
-                    aria-label="Skitbit app preview - approvals made easy"
+                    aria-label="Boaz Siekonha App‑Vorschau"
                   />
                   {/* On-screen content */}
                   <div className="relative p-3">
                     <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
                     <div className="space-y-1 px-1">
                       
-                      <p className="text-xs text-white/80 sm:text-sm">From feedback to approval in a single flow</p>
+                      <p className="text-xs text-white/80 sm:text-sm">Vom Feedback zur Freigabe in einem einzigen Ablauf</p>
                       <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
-                        Zero Hassle
+                        Kein Aufwand
                       </div>
                     </div>
                   </div>
@@ -126,8 +127,7 @@ export function AppverseFooter() {
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-white">Skitbit</span>
+                <span className="text-xl font-semibold text-white">Boaz Siekonha</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
             </div>
@@ -137,64 +137,45 @@ export function AppverseFooter() {
               <div>
                 <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Navigation</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  {["Home", "Features", "Testimonials", "Pricing", "Blog", "Download"].map((item) => (
-                    <li key={item}>
-                      <Link href={`#${item.toLowerCase()}`} className="hover:text-lime-300">
-                        {item}
+                  {[
+                    { label: "Startseite", anchor: "home" },
+                    { label: "Funktionen", anchor: "features" },
+                    { label: "Referenzen", anchor: "testimonials" },
+                    { label: "Preise", anchor: "pricing" },
+                    { label: "Blog", anchor: "blog" },
+                    { label: "Download", anchor: "download" },
+                  ].map((item) => (
+                    <li key={item.anchor}>
+                      <Link href={`#${item.anchor}`} className="hover:text-lime-300">
+                        {item.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Social media</h5>
+                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Kontakt</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  <li className="flex items-center gap-2">
-                    <Twitter className="h-4 w-4 text-neutral-400" />
-                    <a
-                      href="https://twitter.com/theskitbit"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Twitter"
-                    >
-                      X/Twitter
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Youtube className="h-4 w-4 text-neutral-400" />
-                    <a
-                      href="https://www.youtube.com/@skitbitinternational"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Subscribe to skitbit on YouTube"
-                    >
-                      YouTube
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Instagram className="h-4 w-4 text-neutral-400" />
-                    <a
-                      href="https://instagram.com/theskitbit"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Instagram"
-                    >
-                      Instagram
-                    </a>
-                  </li>
                   <li className="flex items-center gap-2">
                     <MessageCircle className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://threads.com/theskitbit"
+                      href="https://wa.me/4917661314158"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Threads"
+                      aria-label="WhatsApp"
                     >
-                      Threads
+                      WhatsApp
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-neutral-400" />
+                    <a
+                      href="mailto:boaz.siekonha15@gmail.com"
+                      className="hover:text-lime-300"
+                      aria-label="E‑Mail"
+                    >
+                      boaz.siekonha15@gmail.com
                     </a>
                   </li>
                 </ul>
@@ -206,11 +187,11 @@ export function AppverseFooter() {
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row">
             <p>{content.copyright}</p>
             <div className="flex items-center gap-6">
-              <Link href="/revisions" className="hover:text-lime-300">
-                Revision Policy
+              <Link href="#" className="hover:text-lime-300">
+                Revisionsrichtlinie
               </Link>
-              <Link href="/t&c" className="hover:text-lime-300">
-                Terms & Conditions
+              <Link href="#" className="hover:text-lime-300">
+                Allgemeine Geschäftsbedingungen
               </Link>
             </div>
           </div>
