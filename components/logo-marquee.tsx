@@ -75,9 +75,9 @@ export function LogoMarquee() {
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
-            Meet our <span className="text-lime-300">top-tier</span>
+            See my Stack of <span className="text-lime-300">top-tier</span>
             <br />
-            customers
+            technologies
           </h2>
           <Button
             variant="outline"
