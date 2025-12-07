@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react"
 import Image from "next/image"
-import { Star } from "lucide-react"
+import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import {
@@ -191,6 +191,9 @@ export function Features() {
             <CardTitle className="mt-1 text-xl text-white">Admin • Apotheker • Verkäufer</CardTitle>
           </CardHeader>
           <CardContent>
+            <div className="mx-auto max-w-sm mb-3">
+              <PharmaCarousel variant="compact" />
+            </div>
             <p className="text-sm sm:text-base text-neutral-300">
               Erste Einblicke: Inventarverwaltung mit Echtzeit‑Überwachung und rollenbasiertem Zugriff. Entdecken Sie Katalog, Suche/Filter, Preisgestaltung und Workflows — kompakt dargestellt.
             </p>
@@ -247,33 +250,94 @@ export function Features() {
   )
 }
 
-function PharmaCarousel() {
+function PharmaCarousel({ variant = "default" }: { variant?: "default" | "compact" }) {
   const [viewportRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" })
+  const slides = [
+    { src: "/pharm/Admin dashbord.png", alt: "Pharma Dashboard — Admin" },
+    { src: "/pharm/Dashbord-setting.png", alt: "Pharma Dashboard — Einstellungen" },
+    { src: "/pharm/Dashbord-system-Activity.png", alt: "Pharma — Systemaktivität" },
+    { src: "/pharm/Dashbord-user-management.png", alt: "Pharma — Benutzerverwaltung" },
+    { src: "/pharm/doctor dashbord.png", alt: "Pharma — Arzt Dashboard" },
+    { src: "/pharm/login out.png", alt: "Pharma — Login/Logout" },
+    { src: "/pharm/medication-inventorie.png", alt: "Pharma — Medikamenten‑Inventar" },
+    { src: "/pharm/mobile-view role selector.png", alt: "Pharma — Mobile Rollen‑Auswahl" },
+    { src: "/pharm/role selector.png", alt: "Pharma — Rollen‑Auswahl" },
+  ]
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [lightbox, setLightbox] = useState<{ index: number } | null>(null)
 
   const onPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
   const onNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
+  useEffect(() => {
+    if (!emblaApi) return
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+    onSelect()
+    emblaApi.on("select", onSelect)
+  }, [emblaApi])
+
+  const [modalViewportRef, modalEmbla] = useEmblaCarousel({ loop: true, align: "start" })
+  const [modalSelectedIndex, setModalSelectedIndex] = useState(0)
+  useEffect(() => {
+    if (!modalEmbla) return
+    const onSelect = () => setModalSelectedIndex(modalEmbla.selectedScrollSnap())
+    onSelect()
+    modalEmbla.on("select", onSelect)
+  }, [modalEmbla])
+  useEffect(() => {
+    if (modalEmbla && lightbox) {
+      modalEmbla.scrollTo(lightbox.index)
+    }
+  }, [modalEmbla, lightbox])
+  useEffect(() => {
+    if (!lightbox) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null)
+      else if (e.key === "ArrowLeft") modalEmbla?.scrollPrev()
+      else if (e.key === "ArrowRight") modalEmbla?.scrollNext()
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [lightbox, modalEmbla])
 
   return (
     <div className="relative">
       <div className="overflow-hidden" ref={viewportRef as any}>
         <div className="flex">
-          {["/images/top-rated-1.png", "/images/top-rated-2.png", "/images/intuitive-1.png", "/images/intuitive-2.png"].map((src, i) => (
-            <div key={i} className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_80%] pr-3">
-              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10">
+          {slides.map(({ src, alt }, i) => (
+            <div
+              key={i}
+              className={`min-w-0 ${variant === "compact" ? "flex-[0_0_100%] sm:flex-[0_0_70%]" : "flex-[0_0_100%] sm:flex-[0_0_80%]"} pr-3`}
+            >
+              <button
+                type="button"
+                onClick={() => setLightbox({ index: i })}
+                aria-label="Bild groß anzeigen"
+                className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 cursor-zoom-in"
+              >
                 <Image
                   src={src}
-                  alt={`Pharma screen ${i + 1}`}
+                  alt={alt}
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 640px, 90vw"
                   priority={i === 0}
                 />
-              </div>
+              </button>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-3 flex items-center justify-end gap-2">
+      <div className="mt-2 flex items-center justify-center gap-1">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => emblaApi?.scrollTo(i)}
+            aria-label={`Zum Bild ${i + 1}`}
+            className={`h-1.5 w-1.5 rounded-full ${i === selectedIndex ? "bg-white/90" : "bg-white/30"}`}
+          />
+        ))}
+      </div>
+      <div className="mt-3 flex items-center justify-center gap-2">
         <button
           onClick={onPrev}
           aria-label="Vorheriges Bild"
@@ -281,7 +345,7 @@ function PharmaCarousel() {
           className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/90 hover:bg-white/10"
           disabled={!emblaApi}
         >
-          Prev
+          Zurück
         </button>
         <button
           onClick={onNext}
@@ -290,9 +354,70 @@ function PharmaCarousel() {
           className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/90 hover:bg-white/10"
           disabled={!emblaApi}
         >
-          Next
+          Weiter
         </button>
       </div>
+
+      <AlertDialog open={!!lightbox} onOpenChange={(o) => !o && setLightbox(null)}>
+        <AlertDialogContent className="w-[96vw] max-w-6xl rounded-xl border border-white/20 bg-black/70 backdrop-blur-md shadow-2xl">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-white">Vorschau</AlertDialogTitle>
+            <AlertDialogDescription className="text-neutral-300">Bilder im großen Format</AlertDialogDescription>
+          </AlertDialogHeader>
+          <div className="overflow-hidden rounded-xl border border-white/10">
+            <div className="relative" ref={modalViewportRef as any}>
+              <div className="flex">
+                {slides.map(({ src, alt }, i) => (
+                  <div key={i} className="min-w-0 flex-[0_0_100%]">
+                    <div className="relative w-full aspect-video max-h-[80vh] bg-black">
+                      <Image src={src} alt={alt} fill className="object-contain" sizes="(min-width: 1024px) 1024px, 96vw" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => modalEmbla?.scrollPrev()}
+                aria-label="Vorheriges Bild"
+                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 text-white/90 hover:bg-white/20"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => modalEmbla?.scrollNext()}
+                aria-label="Nächstes Bild"
+                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 text-white/90 hover:bg-white/20"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+          <div className="mt-2 flex items-center justify-center gap-1">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => modalEmbla?.scrollTo(i)}
+                aria-label={`Zum Bild ${i + 1}`}
+                className={`h-1.5 w-1.5 rounded-full ${i === modalSelectedIndex ? "bg-white/90" : "bg-white/30"}`}
+              />
+            ))}
+          </div>
+          <div className="mt-3 flex justify-end gap-2">
+            <button
+              onClick={() => modalEmbla?.scrollPrev()}
+              className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/90 hover:bg-white/10"
+            >
+              Zurück
+            </button>
+            <button
+              onClick={() => modalEmbla?.scrollNext()}
+              className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs text-white/90 hover:bg-white/10"
+            >
+              Weiter
+            </button>
+            <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
+          </div>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }
