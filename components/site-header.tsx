@@ -21,19 +21,19 @@ export function SiteHeader() {
 
   const services = [
     {
-      href: "/3D-architecture-visualization-studio",
+      href: "#features",
       label: "ArchViz Render",
       icon: Building2,
       description: "Photoreal 3D renders & CGI walkthroughs",
     },
     {
-      href: "/3d-product-rendering",
+      href: "#pricing",
       label: "3D Product Rendering",
       icon: Package,
       description: "Studio-quality product visuals",
     },
     {
-      href: "/",
+      href: "#features",
       label: "3D Product Animation",
       icon: Package,
       description: "Motion-led storytelling for products",
@@ -41,9 +41,9 @@ export function SiteHeader() {
   ]
 
   const links = [
-    { href: "/portfolio", label: "Portfolio", icon: FileText },
-    { href: "About", label: "About", icon: Info },
-    { href: "faq", label: "FAQ", icon: HelpCircle },
+    { href: "#features", label: "Portfolio", icon: FileText },
+    { href: "#about", label: "About", icon: Info },
+    { href: "#pricing", label: "FAQ", icon: HelpCircle },
   ]
 
   return (
@@ -51,7 +51,7 @@ export function SiteHeader() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-1.5">
+          <Link href="#" className="flex items-center gap-1.5">
             <Image src="/profil-bild.jpg" alt="Logo" width={20} height={20} className="h-5 w-5 rounded-full" />
             <span className="font-semibold tracking-wide text-white">Boaz Siekonha</span>
           </Link>
