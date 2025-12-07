@@ -85,7 +85,7 @@ export function Hero() {
           </div>
             <div className="mt-6">{buttonNew}</div>
           </div>
-          <div className="w-full flex justify-start sm:justify-center lg:justify-end pl-2 sm:pl-0">
+          <div className="w-full flex justify-center sm:justify-center lg:justify-end pl-0">
             <div className="flex flex-col items-center gap-2 sm:gap-3">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
@@ -129,6 +129,9 @@ export function Hero() {
               </AlertDialog>
             </div>
           </div>
+        </div>
+        <div className="mt-4">
+          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Transformer l’idée en impact, du premier pixel à la dernière ligne de code</h2>
         </div>
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
           <div>
