@@ -25,7 +25,7 @@ export function Hero() {
   )
 
   const rotatingTexts = [
-    "Intelligence Artificielle",
+    "Künstliche Intelligenz",
     "Cloud Computing",
     "Datensicherheit",
     "DevOps",
