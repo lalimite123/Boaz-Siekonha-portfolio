@@ -27,10 +27,10 @@ export function Hero() {
   const rotatingTexts = [
     "Intelligence Artificielle",
     "Cloud Computing",
-    "Data Sicherheit",
+    "Datensicherheit",
     "DevOps",
     "CI/CD",
-    "datenbanken",
+    "Datenbanken",
     ".NET",
     "Python",
     "Blazor",
