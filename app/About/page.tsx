@@ -15,12 +15,18 @@ export default function AboutPage() {
           >
             Über mich
           </div>
-          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Boaz Siekonha</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-neutral-300">
-            Full‑Stack‑Entwickler und Produkt‑Designer. Ich entwickle moderne Web‑Erlebnisse mit Next.js (App Router),
-            React, TypeScript, Tailwind CSS und shadcn/ui sowie typisierten Backends (Supabase/PostgreSQL, Node.js).
-            Fokus auf Qualität, Performance und barrierearme Interfaces – vom Prototyp bis zum Produktivbetrieb.
-          </p>
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Aime Boaz Siekonha</h2>
+          <div className="mx-auto mt-3 max-w-2xl space-y-3 text-sm sm:text-base text-neutral-300">
+            <p>
+              Ich bin ein leidenschaftlicher Softwareingenieur mit über vier Jahren Erfahrung und arbeite heute als Fullstack‑Entwickler. Neue Herausforderungen motivieren mich – ich sehe sie als Chance, weiter zu wachsen und innovative Lösungen zu schaffen.
+            </p>
+            <p>
+              Mit meinem Bachelor of Science in Informatik habe ich eine solide Grundlage aufgebaut, doch meine wahre Stärke liegt in der Begeisterung für Softwarearchitektur, Frontend, Backend und DevOps.
+            </p>
+            <p>
+              Im Laufe der Jahre habe ich gelernt, diese Bereiche miteinander zu verbinden und so moderne, intuitive und leistungsstarke Weblösungen zu entwickeln, die sowohl technisch sauber als auch benutzerorientiert sind.
+            </p>
+          </div>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">

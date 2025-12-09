@@ -11,9 +11,9 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Boaz Siekonha | Portfolio personnel",
-  description: "Design, développement et visuels – sélection de projets.",
-  generator: "AIME BOAZ SIEKONHA",
+  title: "Boaz Siekonha | Portfolio – Full‑Stack‑Entwickler – 4+ Jahre Erfahrung",
+  description: "Full‑Stack‑Entwickler (4+ Jahre): Next.js, React, TypeScript, CI/CD & DevOps. Entwicklung performanter Weblösungen – ausgewählte Projekte.",
+  generator: "Aime Boaz Siekonha",
 }
 
 export default function RootLayout({
