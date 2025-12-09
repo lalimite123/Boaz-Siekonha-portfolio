@@ -52,6 +52,14 @@ export default function AboutPage() {
               Pragmatisches Design, lesbarer und wartbarer Code. Saubere Integrationen, Fehler‑Monitoring und
               konsistente Lieferqualität. Ich baue schnelle, zugängliche und flüssige Produkte.
             </p>
+            <ul className="mt-3 list-disc pl-4 space-y-1 text-sm text-neutral-100/90">
+              <li>Jung und dynamisch</li>
+              <li>Fleißig und belastbar</li>
+              <li>Ausgeprägter Organisationssinn</li>
+              <li>Pünktlich und zuverlässig</li>
+              <li>Demütig und respektvoll</li>
+              <li>Offen und neugierig: lebenslanges Lernen & kontinuierliches Up‑Skilling</li>
+            </ul>
             <div className="mt-4">
               <Link
                 href="/#features"
