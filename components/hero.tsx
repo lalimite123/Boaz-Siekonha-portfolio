@@ -53,13 +53,13 @@ export function Hero() {
   ]
 
   const timelineDataDevopsScrum = [
-    { id: 1, title: "Scrum", date: "2025", content: "Sprints, backlog, revues & rétros", category: "scrum", icon: "listChecks", relatedIds: [2, 3], status: "completed", energy: 80 },
-    { id: 2, title: "DevOps", date: "2025", content: "Automatisation, CI/CD, observabilité", category: "devops", icon: "settings", relatedIds: [1, 4], status: "in-progress", energy: 70 },
-    { id: 3, title: "CI/CD", date: "2025", content: "Intégration continue & déploiement", category: "pipeline", icon: "gitBranch", relatedIds: [2], status: "completed", energy: 65 },
-    { id: 4, title: "Delivery", date: "2025", content: "Release fiable & monitoring", category: "delivery", icon: "rocket", relatedIds: [2, 3], status: "completed", energy: 75 },
-    { id: 5, title: "Monitoring", date: "2025", content: "Surveillance & alertes", category: "monitoring", icon: "chartBar", relatedIds: [4], status: "completed", energy: 80 },
-    { id: 6, title: "Security", date: "2025", content: "Sécurité des données & applications", category: "security", icon: "lock", relatedIds: [4], status: "completed", energy: 85 },
-    { id: 7, title: "Scalability", date: "2025", content: "Scalabilité horizontale & verticale", category: "scalability", icon: "scale", relatedIds: [4], status: "completed", energy: 80 },
+    { id: 1, title: "Scrum", date: "2025", content: "Sprints, Backlog, Reviews & Retros", category: "scrum", icon: "listChecks", relatedIds: [2, 3], status: "completed", energy: 80 },
+    { id: 2, title: "DevOps", date: "2025", content: "Automatisierung, CI/CD, Observabilität", category: "devops", icon: "settings", relatedIds: [1, 4], status: "in-progress", energy: 70 },
+    { id: 3, title: "CI/CD", date: "2025", content: "Integrationskontrolle & Bereitstellung", category: "pipeline", icon: "gitBranch", relatedIds: [2], status: "completed", energy: 65 },
+    { id: 4, title: "Delivery", date: "2025", content: "Zuverlässige Releases & Monitoring", category: "delivery", icon: "rocket", relatedIds: [2, 3], status: "completed", energy: 75 },
+    { id: 5, title: "Monitoring", date: "2025", content: "Überwachung & Alerts", category: "monitoring", icon: "chartBar", relatedIds: [4], status: "completed", energy: 80 },
+    { id: 6, title: "Security", date: "2025", content: "Daten- & Anwendungssicherheit", category: "security", icon: "lock", relatedIds: [4], status: "completed", energy: 85 },
+    { id: 7, title: "Scalability", date: "2025", content: "Horizontale & vertikale Skalierbarkeit", category: "scalability", icon: "scale", relatedIds: [4], status: "completed", energy: 80 },
   ]
 
   return (
@@ -132,16 +132,16 @@ export function Hero() {
           </div>
         </div>
         <div className="mt-4">
-          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Von der Idee zum Impact – vom ersten Pixel bis zur letzten Codezeile</h2>
+          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Von der Idee zum Impakt – vom ersten Pixel bis zur letzten Codezeile</h2>
         </div>
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
           <div>
             <DatabaseWithRestApi
               className="mx-auto lg:ml-0"
-              title="Implémentations backend — REST API"
+              title="Implementierung des Backends — REST API"
               circleText="API"
               badgeTexts={{ first: "GET", second: "POST", third: "PUT", fourth: "DELETE" }}
-              buttonTexts={{ first: "Back-end", second: "Endpoints" }}
+              buttonTexts={{ first: "Back-end", second: "Endpunkte" }}
               lightColor="#0d8af0ff"
             />
           </div>
@@ -158,7 +158,7 @@ export function Hero() {
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-white text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.35)] group-hover:scale-[1.02]">Backend (REST API)</h2>
               <div className="mt-1 h-px w-28 bg-gradient-to-r from-blue-400/60 to-transparent" />
               <p className="text-lg leading-8 text-neutral-200 font-medium">
-                Sicher und strukturiertes Endpunkte für das Datenmanagement: ressourcenorientierter Entwurf,
+                Sichere und strukturierte Endpunkte für das Datenmanagement: ressourcenorientierter Entwurf,
                 Validierungen, Zugriffskontrolle und standardisierte Antworten.
               </p>
               <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">

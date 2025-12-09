@@ -181,7 +181,7 @@ export function AppverseFooter() {
           {/* Bottom bar */}
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row">
             <p>{content.copyright}</p>
-            <p>Développé par Aime Boaz Siekonha</p>
+            <p>Entwickelt von Aime Boaz Siekonha</p>
           </div>
         </div>
       </footer>

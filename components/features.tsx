@@ -23,7 +23,7 @@ interface FeaturesContent {
 }
 
 const defaultContent: FeaturesContent = {
-  title: "Was macht mich zum besten Vorteil für Ihre Projekte.",
+  title: "Was macht mich zum besten Vorteil für Ihre Projekte ?",
   subtitle: "Discover our unique approach to 3D animation",
 }
 
