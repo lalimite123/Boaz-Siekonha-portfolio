@@ -57,6 +57,7 @@ export function Features() {
           <CardHeader>
             <p className="text-[11px] tracking-widest text-white/80">E‑COMMERCE ADMIN</p>
             <CardTitle className="mt-1 text-xl text-white">Next.js Administrationsdashboard – E‑Commerce Management</CardTitle>
+            <div className="mt-2 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-lime-300/90">Full‑Stack‑Softwareentwickler</div>
           </CardHeader>
           <CardContent>
             <div className="mx-auto max-w-sm mb-3">
@@ -143,6 +144,7 @@ export function Features() {
           <CardHeader>
             <p className="text-[11px] tracking-widest text-white/80">IMMIGRATION WEBPORTAL</p>
             <CardTitle className="mt-1 text-xl text-white">Projekt — Akor Immigration Webportal</CardTitle>
+            <div className="mt-2 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-lime-300/90">Full‑Stack‑Softwareentwickler</div>
           </CardHeader>
           <CardContent>
             <div className="mx-auto max-w-sm mb-3">
@@ -208,64 +210,103 @@ export function Features() {
 
       {/* Pharma Inventory Project Showcase */}
       <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {/* Left: Carousel with images/video teaser */}
+        {/* Left: Dermafuss Lollar project */}
         <Card className="liquid-glass border border-white/20">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">PHARMA INVENTORY PLATFORM</p>
-            <CardTitle className="mt-1 text-xl text-white">Projekt — Pharmazeutische Inventarverwaltung (PWA)</CardTitle>
+            <p className="text-[11px] tracking-widest text-white/80">DERMAFUSS LOLLAR</p>
+            <CardTitle className="mt-1 text-xl text-white">Projekt — Moderne Webseite mit Buchungssystem</CardTitle>
+            <div className="mt-2 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-lime-300/90">Full‑Stack‑Softwareentwickler</div>
           </CardHeader>
           <CardContent>
-            <PharmaCarousel />
+            <div className="mx-auto max-w-sm mb-3">
+              <ImageCarousel
+                images={[
+                  { src: "/derma-image/derma1.png", alt: "Dermafuss — Homepage" },
+                  { src: "/derma-image/derma2.png", alt: "Dermafuss — Leistungen" },
+                  { src: "/derma-image/derma4.png", alt: "Dermafuss — Philosophie" },
+                  { src: "/derma-image/derma5.png", alt: "Dermafuss — Online‑Buchung" },
+                ]}
+                variant="compact"
+              />
+            </div>
+            <p className="text-sm sm:text-base text-neutral-300">
+              Entwicklung einer modernen Webseite mit Buchungssystem für ein Fachfußpflege‑Studio. Next.js 16 (App Router), TypeScript, React 18, Tailwind CSS 4, Radix UI und framer‑motion für eine performante, barrierearme und mobile‑optimierte UX.
+            </p>
+            <div className="mt-4 rounded-lg border border-lime-400/30 bg-lime-500/10 backdrop-blur-md p-4">
+              <ul className="space-y-1 text-sm text-neutral-100/90">
+                <li>REST‑API für Terminbuchungen mit MongoDB, Validierungen, eindeutiger Index</li>
+                <li>Präzise Zeitzonen‑Korrektur durch lokales Datums‑Handling</li>
+                <li>DSGVO‑konformer Cookie‑Consent mit ereignisgesteuerter Analytics</li>
+                <li>Fortgeschrittene SEO: JSON‑LD, OpenGraph/Twitter, Canonical, Sitemap, Robots</li>
+                <li>SendGrid Bestätigungen & ICS‑Kalendereinladungen</li>
+              </ul>
+            </div>
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-sm text-neutral-300">Karussell: Screens & Teaser</span>
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <button
-                    className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
-                    aria-label="Video ansehen"
-                    title="Video ansehen"
-                  >
-                    Video ansehen
-                  </button>
-                </AlertDialogTrigger>
-                <AlertDialogContent className="w-[92vw] max-w-5xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
-                  <AlertDialogHeader>
-                    <AlertDialogTitle className="text-white">Pharma — Inventarverwaltung</AlertDialogTitle>
-                    <AlertDialogDescription className="text-neutral-300">
-                      Vollständige Beschreibung & Vorschau
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-[1.1fr_1.4fr] items-start">
-                    <div className="space-y-2 text-sm text-neutral-300">
-                      <p><strong>Projekt:</strong> Entwicklung einer pharmazeutischen Inventarverwaltungsplattform</p>
-                      <p><strong>Projektrolle:</strong> Freiberuflicher Fullstack Software Entwickler</p>
-                      <ul className="list-disc pl-4 space-y-1">
-                        <li>Moderne PWA mit Next.js 13+ (App Router)</li>
-                        <li>RESTful API: Medikamente, Kategorien, Lagerbestand, Authentifizierung, Benachrichtigungen</li>
-                        <li>Sichere Integration mit Supabase PostgreSQL (typisierte Schemas, Services)</li>
-                        <li>Dynamischer Medikamentenkatalog: Suche, Filter, Preise</li>
-                        <li>Bestandsverwaltung: Echtzeitüberwachung, Workflows</li>
-                        <li>Drei Dashboards (Admin/Apotheker/Verkäufer) — CRUD, Rollen, Logs, Benutzerverwaltung</li>
-                        <li>Offline‑Modus mit intelligenten Fallbacks, robuste Fehlerbehandlung</li>
-                        <li>Performance: Lazy Loading, Code Splitting, Konnektivitätserkennung</li>
-                      </ul>
-                      <p className="text-xs text-neutral-400">Tools: TypeScript/JavaScript, React.js, Next.js 13+ App Router, Supabase, PostgreSQL, Node.js, MongoDB/Mongoose, NextAuth.js, JWT, bcrypt/Argon2, Tailwind CSS, shadcn/ui, Framer Motion</p>
+              <Link
+                href="https://www.derma-fuss.de/"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                aria-label="Zur Website"
+                title="Zur Website"
+              >
+                Zur Website
+              </Link>
+              <div className="flex items-center gap-2">
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button
+                      className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                      aria-label="Mehr Details"
+                      title="Mehr Details"
+                    >
+                      Mehr Details
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[92vw] max-w-5xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
+                    <AlertDialogHeader>
+                      <AlertDialogTitle className="text-white">Projektdetails — Dermafuss Lollar</AlertDialogTitle>
+                      <AlertDialogDescription className="text-neutral-300">Webseite, Buchungen, DSGVO, SEO & E‑Mail</AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <div className="space-y-3 text-sm text-neutral-300">
+                      <p><strong>Projekt:</strong> Entwicklung einer modernen Webseite mit Buchungssystem für ein Fachfußpflege‑Studio (<Link href="https://www.derma-fuss.de/" className="underline text-lime-300">derma-fuss.de</Link>).</p>
+                      <p><strong>Projektrolle:</strong> Full‑Stack‑Softwareentwickler</p>
+                      <p><strong>Projektinhalt:</strong> Next.js 16 (App Router), TypeScript, React 18 (Client Components & Hooks), Tailwind CSS 4, Radix UI und framer‑motion für eine performante, barrierearme und mobile‑optimierte Nutzererfahrung.</p>
+                      <p>REST‑API für Terminbuchungen auf Basis von MongoDB, mit Validierungen, eindeutigem Index zur Vermeidung von Doppelbuchungen sowie präziser Zeitzonen‑Korrektur durch lokales Datums‑Handling.</p>
+                      <p>DSGVO‑konformer Cookie‑Consent mit ereignisgesteuerter Aktivierung von Analytics (Event‑Bus über DOM) und gekapselter Tracking‑Integration.</p>
+                      <p>Fortgeschrittene SEO‑Optimierung: JSON‑LD LocalBusiness, OpenGraph/Twitter Cards, Canonical‑Tags, Sitemap, Robots und semantisches H1 für optimale Auffindbarkeit.</p>
+                      <p>Integration von SendGrid für E‑Mail‑Bestätigungen sowie Generierung von ICS‑Kalendereinladungen für Outlook/Apple/Google Kalender.</p>
+                      <p className="text-xs text-neutral-400"><strong>Tools:</strong> Next.js 16 (App Router, Metadata Routes), TypeScript, React 18 (Hooks, Client Components), REST API, Docker MongoDB, Tailwind CSS 4, Radix UI, shadcn/ui, framer‑motion, Embla Carousel, Service Worker, Manifest, localStorage, sessionStorage, SendGrid, ICS‑Generator, pnpm, Git/GitHub, SCRUM.</p>
                     </div>
+                    <div className="mt-4 flex justify-end gap-2">
+                      <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
+                    </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button
+                      className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                      aria-label="Video ansehen"
+                      title="Video ansehen"
+                    >
+                      Video ansehen
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[96vw] max-w-[96vw] xl:max-w-[1280px] 2xl:max-w-[1400px] max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
                     <div className="relative rounded-2xl border border-white/20 bg-black/60 overflow-hidden">
                       <video
-                        src="/dashbord wabo/pharm-video.mp4"
-                        className="h-full w-full object-cover"
+                        src="/derma-image/fuss-video.mp4"
+                        className="w-full aspect-video max-h-[80vh] object-contain"
                         controls
                         playsInline
                         preload="metadata"
                       />
                     </div>
-                  </div>
-                  <div className="mt-4 flex justify-end gap-2">
-                    <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
-                  </div>
-                </AlertDialogContent>
-              </AlertDialog>
+                    <div className="mt-4 flex justify-end gap-2">
+                      <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
+                    </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -275,6 +316,7 @@ export function Features() {
           <CardHeader>
             <p className="text-[11px] tracking-widest text-white/80">DASHBOARDS & ROLLEN</p>
             <CardTitle className="mt-1 text-xl text-white">Admin • Apotheker • Verkäufer</CardTitle>
+            <div className="mt-2 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-lime-300/90">Full‑Stack‑Softwareentwickler</div>
           </CardHeader>
           <CardContent>
             <div className="mx-auto max-w-sm mb-3">
