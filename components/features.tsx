@@ -15,6 +15,7 @@ import {
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog"
 import useEmblaCarousel from "embla-carousel-react"
+import { ImageCarousel } from "@/components/image-carousel"
 
 interface FeaturesContent {
   title: string
@@ -51,70 +52,155 @@ export function Features() {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {/* Adaptability Card - Hidden on mobile */}
-        <Card className="hidden md:block liquid-glass border border-white/20">
+        {/* E‑Commerce Admin Dashboard Card */}
+        <Card className="liquid-glass border border-white/20">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">ADAPTABILITY</p>
-            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
+            <p className="text-[11px] tracking-widest text-white/80">E‑COMMERCE ADMIN</p>
+            <CardTitle className="mt-1 text-xl text-white">Next.js Administrationsdashboard – E‑Commerce Management</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
-                <Image
-                  src="/images/intuitive-1.png"
-                  alt="Close-up smartphone camera module on textured leather back"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 240px, 45vw"
-                  priority={false}
-                />
-              </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
-                <Image
-                  src="/images/intuitive-2.png"
-                  alt="Hand gripping textured phone back — macro detail"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 240px, 45vw"
-                  priority={false}
-                />
-              </div>
+            <div className="mx-auto max-w-sm mb-3">
+              <ImageCarousel
+                images={[
+                  { src: "/dashbord wabo/dashbord1.png", alt: "Admin Dashboard — Übersicht" },
+                  { src: "/dashbord wabo/dashbord2.png", alt: "Admin Dashboard — Produkte" },
+                  { src: "/dashbord wabo/dashbord3.png", alt: "Admin Dashboard — Bestellungen" },
+                  { src: "/dashbord wabo/dashbord4.png", alt: "Admin Dashboard — Kategorien" },
+                  { src: "/dashbord wabo/dashbord5.png", alt: "Admin Dashboard — Best‑Seller" },
+                ]}
+                variant="compact"
+              />
+            </div>
+            <p className="text-sm sm:text-base text-neutral-300">
+              Next.js Admin‑Dashboard für die komplette E‑Commerce‑Verwaltung. Produkte, Bestellungen, Kategorien und Best‑Seller — klar strukturiert und intuitiv, mit modularer Architektur und Tailwind‑Designsystem.
+            </p>
+            <div className="mt-4 rounded-lg border border-lime-400/30 bg-lime-500/10 backdrop-blur-md p-4">
+              <ul className="space-y-1 text-sm text-neutral-100/90">
+                <li>Virtualisierte Tabellen, Lazy Loading, Suche/Filter/Pagination</li>
+                <li>Order Flow transparent: Detailmodals, optimierte Bilder</li>
+                <li>NextAuth & ProtectedRoute, ARIA‑konforme UI</li>
+              </ul>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <button
+                    className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                    aria-label="Mehr Details"
+                    title="Mehr Details"
+                  >
+                    Mehr Details
+                  </button>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="w-[92vw] max-w-5xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="text-white">Administrationsdashboard — E‑Commerce</AlertDialogTitle>
+                    <AlertDialogDescription className="text-neutral-300">Komplette Verwaltung & technische Highlights</AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <div className="space-y-3 text-sm text-neutral-300">
+                    <p>
+                      Ich habe ein modernes und leistungsstarkes Admin‑Dashboard mit Next.js entwickelt, das speziell für die komplette Verwaltung eines E‑Commerce‑Systems konzipiert wurde. Das Dashboard ermöglicht die effiziente Steuerung von Produkten, Bestellungen, Kategorien und Best‑Sellern — alles in einer klar strukturierten, intuitiven Oberfläche.
+                    </p>
+                    <p>
+                      Die Architektur ist voll modular aufgebaut und nutzt dedizierte Hooks sowie ein wiederverwendbares Tailwind‑Designsystem.
+                    </p>
+                    <p className="text-neutral-200 font-semibold">Performance & Skalierbarkeit</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Virtualisierte Produkt‑ und Bestelltabellen</li>
+                      <li>Lazy Loading für bessere Ladezeiten</li>
+                      <li>Clientseitige Optimierungen: Suche, Filter, Pagination via <span className="font-mono">useMemo</span></li>
+                    </ul>
+                    <p className="text-neutral-200 font-semibold">Intensiver Bestellfluss (Order Flow)</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Abruf jeder Bestellung über <span className="font-mono">/api/orders/{"{id}"}</span></li>
+                      <li>Sofort sichtbare, optimierte Bilder</li>
+                      <li>Verwaltungsmodals: <span className="font-mono">ViewOrderAdmin</span> und <span className="font-mono">OrderDetailsModal</span></li>
+                    </ul>
+                    <p className="text-neutral-200 font-semibold">Sicherheit & Barrierefreiheit</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>NextAuth für Authentifizierung</li>
+                      <li>ProtectedRoute zur Absicherung aller Admin‑Bereiche</li>
+                      <li>Saubere, ARIA‑konforme UI</li>
+                    </ul>
+                    <p className="text-neutral-200 font-semibold">UX & Designsystem</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Intelligente Tabs (Produkte · Bestellungen · Best‑Seller)</li>
+                      <li>Kontextbasierte Suchleiste & StatsCards</li>
+                      <li>Fokusorientierte Modals; Bilder mit <span className="font-mono">object-contain</span> für Stabilität</li>
+                    </ul>
+                  </div>
+                  <div className="mt-4 flex justify-end gap-2">
+                    <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </CardContent>
         </Card>
 
-        {/* Client Love Card - Always visible */}
+        {/* Akor Immigration Webportal Card - Always visible */}
         <Card className="liquid-glass border border-white/20">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-white/80">CLIENT LOVE</p>
-            <CardTitle className="mt-1 text-xl text-white">
-              Their work didn't just look good, it moved the needle — our audience felt the difference instantly.
-            </CardTitle>
+            <p className="text-[11px] tracking-widest text-white/80">IMMIGRATION WEBPORTAL</p>
+            <CardTitle className="mt-1 text-xl text-white">Projekt — Akor Immigration Webportal</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="mb-6 flex items-end gap-4">
-              <div className="text-5xl font-bold text-lime-300">4.9</div>
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-lime-300 text-lime-300" />
-                ))}
-              </div>
+            <div className="mx-auto max-w-sm mb-3">
+              <ImageCarousel
+                images={[
+                  { src: "/akor_image/akor1.png", alt: "Akor Immigration — Homepage" },
+                  { src: "/akor_image/akor2.png", alt: "Akor Immigration — Services" },
+                ]}
+                variant="compact"
+              />
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src={"/images/top-rated-1.png"}
-                width={280}
-                height={160}
-                alt="Product sketch concepts of backpack on paper"
-                className="h-full w-full rounded-xl border border-white/10 object-cover"
-              />
-              <Image
-                src={"/images/top-rated-2.png"}
-                width={280}
-                height={160}
-                alt="Backpacks on stage with Smartpack PRO lighting"
-                className="h-full w-full rounded-xl border border-white/10 object-cover"
-              />
+            <p className="text-sm sm:text-base text-neutral-300">
+              Entwicklung eines Webportals zur Bereitstellung von Immigrationsdienstleistungen für Deutschland — modernes Next.js (SSR), TypeScript, Tailwind CSS und shadcn/ui, mit sicherer Authentifizierung und mehrsprachiger Oberfläche (FR/DE).
+            </p>
+            <div className="mt-4 rounded-lg border border-lime-400/30 bg-lime-500/10 backdrop-blur-md p-4">
+              <ul className="space-y-1 text-sm text-neutral-100/90">
+                <li>JWT & bcrypt, Rate Limiting, API Routes (SSR)</li>
+                <li>Mehrsprachiges Frontend (FR/DE), modernes Designsystem</li>
+                <li>Admin‑Dashboard mit RBAC, Monitoring, Antragverwaltung</li>
+              </ul>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <Link
+                href="https://www.akorimmigration.net"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                aria-label="Zur Website"
+                title="Zur Website"
+              >
+                Zur Website
+              </Link>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <button
+                    className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+                    aria-label="Mehr Details"
+                    title="Mehr Details"
+                  >
+                    Mehr Details
+                  </button>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="w-[92vw] max-w-5xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="text-white">Projektdetails — Akor Immigration</AlertDialogTitle>
+                    <AlertDialogDescription className="text-neutral-300">Webportal, Sicherheit, Admin & Skalierung</AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <div className="space-y-3 text-sm text-neutral-300">
+                    <p><strong>Projekt:</strong> Entwicklung eines Webportals zur Bereitstellung von Immigrationsdienstleistungen (<Link href="https://www.akorimmigration.net" className="underline text-lime-300">akorimmigration.net</Link>).</p>
+                    <p><strong>Projektrolle:</strong> Softwareentwickler</p>
+                    <p><strong>Projektinhalt:</strong> Moderne Architektur mit Next.js (SSR), TypeScript, Tailwind CSS, shadcn/ui und Radix UI. Sicheres Authentifizierungssystem (JWT, bcrypt, Rate Limiting) und mehrsprachiges Frontend (FR/DE).</p>
+                    <p>Aufbau eines Admin‑Dashboards mit Rollen‑ und Zugriffsverwaltung (RBAC), Monitoring sowie Verwaltung von Immigration‑Anträgen.</p>
+                    <p>Vorbereitung der MongoDB‑Integration; Evaluierung von Erweiterungen (Payment‑Gateways, Messaging, Monitoring).</p>
+                    <p className="text-xs text-neutral-400"><strong>Tools:</strong> Next.js 14 (SSR, API Routes), TypeScript, React (Hooks, Context API), Tailwind CSS, shadcn/ui, Radix UI, Framer Motion, JWT, bcrypt, MongoDB (geplant), pnpm, Git/GitHub, SCRUM.</p>
+                  </div>
+                  <div className="mt-4 flex justify-end gap-2">
+                    <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
+                  </div>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </CardContent>
         </Card>
@@ -142,7 +228,7 @@ export function Features() {
                     Video ansehen
                   </button>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="w-[92vw] max-w-5xl rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
+                <AlertDialogContent className="w-[92vw] max-w-5xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl">
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-white">Pharma — Inventarverwaltung</AlertDialogTitle>
                     <AlertDialogDescription className="text-neutral-300">
@@ -167,7 +253,7 @@ export function Features() {
                     </div>
                     <div className="relative rounded-2xl border border-white/20 bg-black/60 overflow-hidden">
                       <video
-                        src="/wabo-mobile.mp4"
+                        src="/dashbord wabo/pharm-video.mp4"
                         className="h-full w-full object-cover"
                         controls
                         playsInline
@@ -359,7 +445,7 @@ function PharmaCarousel({ variant = "default" }: { variant?: "default" | "compac
       </div>
 
       <AlertDialog open={!!lightbox} onOpenChange={(o) => !o && setLightbox(null)}>
-        <AlertDialogContent className="w-[96vw] max-w-6xl rounded-xl border border-white/20 bg-black/70 backdrop-blur-md shadow-2xl">
+        <AlertDialogContent className="w-[96vw] max-w-6xl sm:max-w-6xl max-h-[85vh] sm:max-h-[80vh] overflow-y-auto rounded-xl border border-white/20 bg-black/70 backdrop-blur-md shadow-2xl">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-white">Vorschau</AlertDialogTitle>
             <AlertDialogDescription className="text-neutral-300">Bilder im großen Format</AlertDialogDescription>
