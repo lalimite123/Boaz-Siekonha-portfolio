@@ -75,15 +75,15 @@ export function LogoMarquee() {
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
-            See my Stack of <span className="text-lime-300">top-tier</span>
+            Entdecke meinen <span className="text-lime-300">top-tier</span>
             <br />
-            technologies
+            Technologie-Stack
           </h2>
           <Button
             variant="outline"
             className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced text-white border-white/20 bg-transparent"
           >
-            Learn More
+            Lerne mehr
           </Button>
         </div>
 
