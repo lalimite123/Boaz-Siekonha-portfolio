@@ -1,116 +1,96 @@
-// app/about/page.tsx
-import React from "react";
+import { SiteHeader } from "@/components/site-header"
+import { AppverseFooter } from "@/components/appverse-footer"
+import Link from "next/link"
+import Image from "next/image"
 
 export default function AboutPage() {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Skitbit International",
-    url: "https://theskitbit.com",
-    logo: "https://theskitbit.com/logo.png",
-    description:
-      "Skitbit International is a 3D product animation agency serving clients in Miami, Los Angeles, New York, Canada, and the UK.",
-    sameAs: [
-      "https://www.instagram.com/skitbit",
-      "https://www.linkedin.com/company/skitbit",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Miami",
-      addressRegion: "FL",
-      addressCountry: "US",
-    },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+1-555-555-5555",
-        contactType: "customer service",
-      },
-    ],
-    areaServed: [
-      { "@type": "Place", name: "Miami" },
-      { "@type": "Place", name: "Los Angeles" },
-      { "@type": "Place", name: "New York" },
-      { "@type": "Place", name: "Canada" },
-      { "@type": "Place", name: "United Kingdom" },
-    ],
-  };
-
   return (
-    <>
-      {/* SEO Schema for Google + LLMs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData),
-        }}
-      />
+    <main className="min-h-[100dvh] text-white">
+      <SiteHeader />
+      <section id="about" className="container mx-auto px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <div
+            className="mx-auto mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium text-white"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", border: "1px solid rgba(198,255,58,0.6)" }}
+          >
+            Über mich
+          </div>
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Boaz Siekonha</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-neutral-300">
+            Full‑Stack‑Entwickler und Produkt‑Designer. Ich entwickle moderne Web‑Erlebnisse mit Next.js (App Router),
+            React, TypeScript, Tailwind CSS und shadcn/ui sowie typisierten Backends (Supabase/PostgreSQL, Node.js).
+            Fokus auf Qualität, Performance und barrierearme Interfaces – vom Prototyp bis zum Produktivbetrieb.
+          </p>
+        </div>
 
-      {/* Hero Section */}
-      <section className="relative bg-black text-white py-20 px-6 md:px-12 lg:px-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          About Skitbit International
-        </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80">
-          Pioneering the future of 3D product animation for global brands.
-        </p>
-      </section>
-
-      {/* Feature Grid */}
-      <section className="py-16 bg-neutral-900 text-white px-6 md:px-12 lg:px-20">
-        <div className="grid gap-12 md:grid-cols-3">
-          {[
-            {
-              title: "3D Product Animation",
-              desc: "Photo-realistic animations that showcase your products in stunning detail.",
-            },
-            {
-              title: "Global Reach",
-              desc: "Serving Miami, LA, New York, Canada, and the UK with world-class visuals.",
-            },
-            {
-              title: "Cutting-edge Technology",
-              desc: "Using the latest rendering engines and motion design tools.",
-            },
-            {
-              title: "Brand Storytelling",
-              desc: "Helping brands communicate their vision through immersive 3D visuals.",
-            },
-            {
-              title: "Collaborative Workflow",
-              desc: "Work directly with our creative team for maximum efficiency.",
-            },
-            {
-              title: "SEO & Marketing Focus",
-              desc: "Optimized content to enhance your visibility on search engines.",
-            },
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="bg-neutral-800 p-6 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300"
-            >
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="opacity-80">{feature.desc}</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="liquid-glass rounded-2xl border border-white/20 p-6">
+            <h3 className="text-xl font-semibold text-white">Kernkompetenzen</h3>
+            <div className="mt-4 rounded-lg border border-lime-400/30 bg-lime-500/10 backdrop-blur-md p-4">
+              <ul className="space-y-1 text-sm text-neutral-100/90">
+                <li>Frontend: React, Next.js 16+, Tailwind, shadcn/ui</li>
+                <li>Frameworks: Angular, Vue, Blazor</li>
+                <li>Backend: REST‑API, Supabase/PostgreSQL, Node.js</li>
+                <li>DevOps & Cloud: Docker, Kubernetes, Terraform, AWS/Azure/GCP</li>
+                <li>CI/CD: GitHub Actions, GitLab CI, Azure DevOps</li>
+                <li>PM & Collaboration: Jira, Confluence, Scrum/Kanban</li>
+                <li>Sicherheit: OWASP, OAuth2/OIDC, RBAC</li>
+                <li>Qualität: Testing (Jest, Playwright), E2E, Linting</li>
+                <li>Performance: Lazy Loading, Code Splitting, robuste Fehlerbehandlung</li>
+              </ul>
             </div>
-          ))}
+          </div>
+          <div className="liquid-glass rounded-2xl border border-white/20 p-6">
+            <h3 className="text-xl font-semibold text-white">Wert & Vorgehen</h3>
+            <p className="mt-3 text-sm sm:text-base text-neutral-300">
+              Pragmatisches Design, lesbarer und wartbarer Code. Saubere Integrationen, Fehler‑Monitoring und
+              konsistente Lieferqualität. Ich baue schnelle, zugängliche und flüssige Produkte.
+            </p>
+            <div className="mt-4">
+              <Link
+                href="/#features"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+              >
+                Projekte ansehen
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="liquid-glass rounded-2xl border border-white/20 p-6">
+            <div className="flex items-center gap-3">
+              <div className="relative h-12 w-12 overflow-hidden rounded-md border border-lime-400/50 bg-black/40 shadow-[0_0_24px_rgba(132,204,22,0.35)]">
+                <Image src="/termi_logo.png" alt="TermiConsult Logo" fill className="object-contain" />
+              </div>
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-lime-300/90">Referenz — TermiConsult</span>
+            </div>
+            <p className="mt-3 text-sm sm:text-base text-neutral-300">
+              TermiConsult ist ein IT‑Beratungsunternehmen mit Schwerpunkt auf IT‑Services und Softwareentwicklung.
+              Erfahrungen in Medizin, Automotive und Luft‑ und Raumfahrt ermöglichen schnelle, zielgerichtete Lösungen –
+              Zeit‑ und Kostenersparnis für unsere Kunden.
+            </p>
+            <div className="mt-4">
+              <Link
+                href="https://termiconsult.com/about"
+                target="_blank"
+                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-lime-300/90 hover:text-white hover:bg-white/10"
+              >
+                Zur Referenz
+              </Link>
+            </div>
+          </div>
+          <div className="liquid-glass rounded-2xl border border-white/20 p-6">
+            <h3 className="text-xl font-semibold text-white">Profil — Boaz Siekonha</h3>
+            <ul className="mt-3 space-y-1 text-sm text-neutral-100/90">
+              <li>Full‑Stack‑Entwickler · Web Development Specialist</li>
+              <li>Moderne JavaScript‑Frameworks: Next.js, React · TypeScript, Node.js</li>
+              <li>Cloud & DevOps‑Denken · Fokus auf Sicherheit, Skalierung und Wartbarkeit</li>
+            </ul>
+          </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-black text-center text-white px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Elevate Your Brand?
-        </h2>
-        <p className="text-lg opacity-80 mb-8">
-          Let Skitbit International bring your products to life.
-        </p>
-        <a
-          href="/contact"
-          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-neutral-200 transition-all"
-        >
-          Get in Touch
-        </a>
-      </section>
-    </>
-  );
+      <AppverseFooter />
+    </main>
+  )
 }

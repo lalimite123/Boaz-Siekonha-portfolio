@@ -18,8 +18,8 @@ import { motion } from "framer-motion"
 export function Hero() {
   const buttonNew = (
     <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-      <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">
-        Me contacter
+      <a href="tel:+4917661314158" aria-label="Direkt anrufen">
+        Kontaktieren Sie mich
       </a>
     </Button>
   )
@@ -32,7 +32,7 @@ export function Hero() {
     "Data Science",
     "Big Data",
     "Machine Learning",
-    "Artificial Neural Networks",
+    
     "Natural Language Processing (NLP)",
     "React",
     "Next.js",
@@ -67,13 +67,13 @@ export function Hero() {
         <div className="grid items-center gap-8 py-14 sm:py-20 lg:grid-cols-2">
           <div className="flex flex-col items-start">
             <div className="mb-5 flex items-center gap-2">
-              <Image src="/icons/skitbit-white.svg" alt="Logo" width={32} height={32} className="h-8 w-8" />
+              {/* <Image src="/icons/skitbit-white.svg" alt="Logo" width={32} height={32} className="h-8 w-8" /> */}
               <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">boaz siekonha</p>
             </div>
             <h1 className="mt-3 text-left text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
               <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)] sm:text-6xl md:text-6xl">Fullstack software engineer</span>
-              <span className="block text-white/90 text-3xl sm:text-4xl md:text-5xl">Du Design à la Production</span>
-              <span className="block text-neutral-300 text-xl sm:text-2xl md:text-3xl">Solide expertise Front-End • APIs • Cloud</span>
+              <span className="block text-white/90 text-3xl sm:text-4xl md:text-5xl">Vom Design bis in die Produktion</span>
+              <span className="block text-neutral-300 text-xl sm:text-2xl md:text-3xl">Solide Expertise im Front-End • APIs • Cloud</span>
             </h1>
           <div className="mt-4">
             <RotatingText
@@ -107,7 +107,7 @@ export function Hero() {
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-white">Boaz Siekonha</AlertDialogTitle>
                     <AlertDialogDescription className="text-neutral-300">
-                      Software Engineer Fullstack — du design à la production. Passionné par l’IA, le Cloud et la sécurité, avec un focus sur la qualité, la performance et l’expérience utilisateur.
+                      Fullstack-Software-Ingenieur — vom Design bis in die Produktion. Leidenschaftlich für KI, Cloud und Sicherheit, mit Fokus auf Qualität, Performance und Nutzererlebnis.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <div className="mt-2 grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 items-center">
@@ -115,15 +115,15 @@ export function Hero() {
                       <Image src="/profil-bild.jpg" alt="Profil — Boaz Siekonha" fill className="object-cover" />
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm text-neutral-300">Je conçois et livre des applications robustes et élégantes: Front-End moderne, APIs fiables, pipelines DevOps et déploiements cloud.</p>
-                      <div className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-600/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Profil mis en avant</div>
+                      <p className="text-sm text-neutral-300">Ich konzipiere und entwickle robuste und elegante Anwendungen: moderne Front-End-Technologien, fiable APIs, DevOps-Pipelines und Cloud-Deployments.</p>
+                      <div className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-600/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Profil hervorheben</div>
                     </div>
                   </div>
                   <div className="mt-4 flex justify-end gap-2">
                     <Button asChild className="rounded-full bg-lime-400 px-5 py-1.5 text-black hover:bg-lime-300 text-sm">
-                      <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">Me contacter</a>
+                      <a href="https://wa.me/4917661314158" target="_blank" rel="noopener noreferrer">Kontaktieren Sie mich</a>
                     </Button>
-                    <AlertDialogCancel className="rounded-full">Fermer</AlertDialogCancel>
+                    <AlertDialogCancel className="rounded-full">Schließen</AlertDialogCancel>
                   </div>
                 </AlertDialogContent>
               </AlertDialog>
@@ -131,7 +131,7 @@ export function Hero() {
           </div>
         </div>
         <div className="mt-4">
-          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Transformer l’idée en impact, du premier pixel à la dernière ligne de code</h2>
+          <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Von der Idee zum Impact – vom ersten Pixel bis zur letzten Codezeile</h2>
         </div>
         <div className="mt-12 grid items-center gap-8 lg:grid-cols-2">
           <div>
@@ -157,13 +157,13 @@ export function Hero() {
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-white text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(56,189,248,0.35)] group-hover:scale-[1.02]">Backend (REST API)</h2>
               <div className="mt-1 h-px w-28 bg-gradient-to-r from-blue-400/60 to-transparent" />
               <p className="text-lg leading-8 text-neutral-200 font-medium">
-                Endpoints sécurisés et structurés pour la gestion des données: conception orientée ressources,
-                validations, contrôle des accès et réponses normalisées.
+                Sicher und strukturiertes Endpunkte für das Datenmanagement: ressourcenorientierter Entwurf,
+                Validierungen, Zugriffskontrolle und standardisierte Antworten.
               </p>
               <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>GET, POST, PUT, DELETE sur les ressources principales</li>
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Validation des schémas et gestion des erreurs</li>
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Statuts HTTP cohérents et messages clairs</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>GET, POST, PUT, DELETE auf Hauptressourcen</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Schema-Validierung und Fehlerbehandlung</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-blue-400/80 align-middle"></span>Konsistente HTTP-Status und klare Nachrichten</li>
               </ul>
             </div>
           </motion.div>
@@ -180,15 +180,15 @@ export function Hero() {
           >
             <div className="space-y-4 group">
               <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-purple-300/90">Agile & Delivery</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-teal-300 text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.35)] group-hover:scale-[1.02]">Approche DevOps & Scrum</h2>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-blue-400 to-teal-300 text-transparent bg-clip-text transition-all duration-300 group-hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.35)] group-hover:scale-[1.02]">DevOps & Scrum Ansatz</h2>
               <div className="mt-1 h-px w-28 bg-gradient-to-r from-purple-400/60 to-transparent" />
               <p className="text-lg leading-8 text-neutral-200 font-medium">
-                Cadre agile et chaîne de livraison continue: sprints, backlog priorisé, pipelines automatisés et qualité mesurable.
+                Agiler Rahmen und kontinuierliche Lieferkette: Sprints, priorisiertes Backlog, automatisierte Pipelines und messbare Qualität.
               </p>
               <ul className="text-lg text-neutral-200/90 space-y-2 font-semibold">
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Scrum: sprints, revues, rétrospectives, backlog</li>
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>DevOps: CI/CD, monitoring, sécurité et conformité</li>
-                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Delivery: releases fiables, feedback & amélioration continue</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Scrum: Sprints, Reviews, Retrospektiven, Backlog</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>DevOps: CI/CD, Monitoring, Sicherheit und Compliance</li>
+                <li><span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-purple-400/80 align-middle"></span>Delivery: zuverlässige Releases, Feedback & kontinuierliche Verbesserung</li>
               </ul>
             </div>
           </motion.div>

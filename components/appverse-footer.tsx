@@ -137,20 +137,15 @@ export function AppverseFooter() {
               <div>
                 <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Navigation</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  {[
-                    { label: "Startseite", anchor: "home" },
-                    { label: "Funktionen", anchor: "features" },
-                    { label: "Referenzen", anchor: "testimonials" },
-                    { label: "Preise", anchor: "pricing" },
-                    { label: "Blog", anchor: "blog" },
-                    { label: "Download", anchor: "download" },
-                  ].map((item) => (
-                    <li key={item.anchor}>
-                      <Link href={`#${item.anchor}`} className="hover:text-lime-300">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link href="/" className="hover:text-lime-300">Startseite</Link>
+                  </li>
+                  <li>
+                    <Link href="/About" className="hover:text-lime-300">About</Link>
+                  </li>
+                  <li>
+                    <Link href="#features" className="hover:text-lime-300">Projekte</Link>
+                  </li>
                 </ul>
               </div>
               <div>
@@ -186,14 +181,7 @@ export function AppverseFooter() {
           {/* Bottom bar */}
           <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-500 sm:flex-row">
             <p>{content.copyright}</p>
-            <div className="flex items-center gap-6">
-              <Link href="#" className="hover:text-lime-300">
-                Revisionsrichtlinie
-              </Link>
-              <Link href="#" className="hover:text-lime-300">
-                Allgemeine Geschäftsbedingungen
-              </Link>
-            </div>
+            <p>Développé par Aime Boaz Siekonha</p>
           </div>
         </div>
       </footer>

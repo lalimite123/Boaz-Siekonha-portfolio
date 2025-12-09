@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" })
 export const metadata: Metadata = {
   title: "Boaz Siekonha | Portfolio personnel",
   description: "Design, développement et visuels – sélection de projets.",
-  generator: "v0.app",
+  generator: "AIME BOAZ SIEKONHA",
 }
 
 export default function RootLayout({
